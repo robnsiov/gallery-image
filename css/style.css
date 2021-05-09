@@ -1,0 +1,153 @@
+@import '../fonts/fonts.css';
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'proximaNova';
+    text-decoration: none;
+    -webkit-tap-highlight-color: none;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+.container {
+    position: relative;
+    max-width: 1100px;
+}
+.container .images {
+    display: flex;
+    flex-wrap: wrap;
+}
+.images span {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+.images .image {
+    padding: 7px;
+    width: calc(100% / 3);
+}
+.images .image img {
+    width: 100%;
+    vertical-align: middle;
+    transition: 0.3s ease;
+}
+.images .image:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width:1000px) {
+    .images .image {
+        width: calc(100% / 2);
+    }
+}
+@media (max-width:600px) {
+    .images .image {
+        padding: 4px !important;
+        width: 100%;
+    }
+}
+.preview-box {
+    position: fixed;
+    max-width: 700px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 0 5px 5px 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 11;
+}
+.absolute{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 102, 255, 0.3);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+}
+.absolute-change{
+    opacity: 1;
+    visibility: visible;
+}
+.add-filter {
+    filter: blur(5px);
+}
+.show-preview {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 7px 12px 10px;
+}
+.title p.current-img {
+    font-weight: 500;
+}
+.details .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+}
+.title p {
+    margin: 0 5px;
+}
+.preview-box .img-box {
+    display: flex;
+    width: 100%;
+}
+.preview-box .img-box img {
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+}
+.img-box .slide {
+    position: absolute;
+    top:  calc(50% + 25px) !important;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+}
+.prev {
+    left: 0;
+}
+.slide.next {
+    right: 0;
+}
+.cahnge-color {
+    background-color: rgba(0, 0, 255, 0.1) !important;
+}
+.fa-close,
+.fa-angle-left,
+.fa-angle-right  {
+    transition: color 0.3s ease-in-out;
+}
+.fa-close:hover,
+.fa-angle-left:hover,
+.fa-angle-right:hover {
+    color: crimson;
+}
+.current-img,
+.total-img {
+    font-weight: bold !important;
+    color: crimson;
+}
+
